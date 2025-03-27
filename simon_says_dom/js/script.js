@@ -24,9 +24,9 @@ const random = Math.floor(Math.random() * 50) + 1;
 let countdownValue = 3; 
 
 const timer = setInterval(() => {
-    if (countdownValue >= 0) {
+    if (countdownValue >= 0) { // Se il countdown è maggiore o uguale a 0
         countdown.innerHTML  = countdownValue; // Mostra il countdown sullo schermo
-        countdownValue--;
+        countdownValue--; // Decrementa il countdown
     } else {
         clearInterval(timer);
         instructions.innerText = 'Indovina i numeri!'; // Mostra le istruzioni
@@ -60,15 +60,15 @@ for(let i = 0; i<numbers.length; i++) {
 }
 
 //evento bottone
-button.addEventListener('click', (event) => {
-    event.preventDefault();
-    const userNumbers = [];
-    const inputs = form.querySelectorAll('input');
+button.addEventListener('click', (event) => { // Quando il bottone viene cliccato
+    event.preventDefault(); // Previeni il comportamento di default del form
+    const userNumbers = []; // Array per i numeri inseriti dall'utente
+    const inputs = form.querySelectorAll('input'); // Seleziona tutti gli input del form
 
-    inputs.forEach(input => {
-        const userNumber = parseInt(input.value);
-        if (!isNaN(userNumber)) {
-            userNumbers.push(userNumber);
+    inputs.forEach(input => { //Per ogni input
+        const userNumber = parseInt(input.value); // Prendi il valore dell'input e trasformalo in numero
+        if (!isNaN(userNumber)) { // Se il numero non è NaN
+            userNumbers.push(userNumber); // Aggiungilo all'array
         }
     });
 
