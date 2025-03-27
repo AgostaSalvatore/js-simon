@@ -71,4 +71,9 @@ button.addEventListener('click', (event) => {
             userNumbers.push(userNumber);
         }
     });
+
+    const correctGuesses = userNumbers.filter(num => numbers.includes(num));
+
+    instructions.innerText = `Hai indovinato ${correctGuesses.length} numeri: ${correctGuesses.join(', ')}`;
+    form.classList.add('d-none'); // Nasconde il form
 });
