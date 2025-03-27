@@ -64,4 +64,11 @@ button.addEventListener('click', (event) => {
     event.preventDefault();
     const userNumbers = [];
     const inputs = form.querySelectorAll('input');
+
+    inputs.forEach(input => {
+        const userNumber = parseInt(input.value);
+        if (!isNaN(userNumber)) {
+            userNumbers.push(userNumber);
+        }
+    });
 });
