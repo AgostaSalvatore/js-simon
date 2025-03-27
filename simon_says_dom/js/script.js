@@ -8,7 +8,7 @@ const instructions = document.getElementById('instructions');
 console.log(instructions);
 
 //list
-const list = document.getElementById('number-list');
+const list = document.getElementById('numbers-list');
 console.log(list);
 
 //form
@@ -31,6 +31,7 @@ const timer = setInterval(() => {
         clearInterval(timer);
         instructions.innerText = 'Indovina i numeri!'; // Mostra le istruzioni
         form.classList.remove('d-none'); // Mostra il form
+        list.classList.add('d-none'); // Nasconde la lista
         countdown.innerHTML = 'Tempo scaduto'; // Mostra il messaggio di fine countdown
     }
 }, 1000);
@@ -47,3 +48,11 @@ function generateRandomNumbers(min,max) {
     return randomArray;
 }
 
+const numbers = generateRandomNumbers(1, 50);
+console.log(numbers);
+
+for(let i = 0; i<numbers.length; i++) {
+    const listItem = document.createElement('li');
+    listItem.innerText = numbers[i];
+    list.appendChild(listItem);
+}
