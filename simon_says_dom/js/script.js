@@ -61,5 +61,7 @@ for(let i = 0; i<numbers.length; i++) {
 
 //evento bottone
 button.addEventListener('click', (event) => {
-
+    event.preventDefault();
+    const userNumbers = [];
+    const inputs = form.querySelectorAll('input');
 });
