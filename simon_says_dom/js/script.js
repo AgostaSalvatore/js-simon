@@ -37,3 +37,11 @@ const timer = setInterval(() => {
 
 //funzione per la generazione di numeri random
 
+function generateRandomNumbers(min,max) {
+    const randomarray = [];
+    const arrayLength = 5;
+    for(let i = 0; i < arrayLength; i++) {
+        let random = Math.floor(Math.random() * (max - min + 1) + min);
+        randomarray.push(random);
+    }
+}
