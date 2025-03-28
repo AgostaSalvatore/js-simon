@@ -21,7 +21,9 @@ const button = document.querySelector('button');
 const random = Math.floor(Math.random() * 50) + 1;
 
 //creo una variabile countdownValue e la inizializzo a 15
-let countdownValue = 3; 
+let countdownValue = 30; 
+
+countdown.innerHTML = countdownValue; // Mostra il countdown sullo schermo
 
 const timer = setInterval(() => {
     if (countdownValue >= 0) { // Se il countdown è maggiore o uguale a 0
