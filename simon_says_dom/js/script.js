@@ -21,7 +21,7 @@ const button = document.querySelector('button');
 const random = Math.floor(Math.random() * 50) + 1;
 
 //creo una variabile countdownValue e la inizializzo a 15
-let countdownValue = 30; 
+let countdownValue = 10; 
 
 countdown.innerHTML = countdownValue; // Mostra il countdown sullo schermo
 
@@ -42,10 +42,17 @@ const timer = setInterval(() => {
 
 function generateRandomNumbers(min,max) {
     const randomArray = [];
-    const arrayLength = 5;
-    for(let i = 0; i < arrayLength; i++) {
-        let random = Math.floor(Math.random() * (max - min + 1) + min);
-        randomArray.push(random);
+    // const arrayLength = 5;
+    // for(let i = 0; i < arrayLength; i++) {
+    //     let random = Math.floor(Math.random() * (max - min + 1) + min);
+    //     randomArray.push(random);
+    // }
+    while(randomArray.length < 5) { //fino a quando l'array non ha 5 elementi
+        const num = Math.floor(Math.random() * (max - min + 1) + min); //genero un numero random
+        //se l'array non contiene il numero, lo aggiungo
+        if(!randomArray.includes(num)) { //se il numero non è già presente nell'array
+            randomArray.push(num); //lo aggiungo all'array
+        }
     }
     return randomArray;
 }
@@ -79,3 +86,5 @@ button.addEventListener('click', (event) => { // Quando il bottone viene cliccat
     instructions.innerText = `Hai indovinato ${correctGuesses.length} numeri: ${correctGuesses.join(', ')}`;
     form.classList.add('d-none'); // Nasconde il form
 });
+
+
